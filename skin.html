@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[##_page_title_##]</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <s_t3>
+        <div id="wrapper">
+            <!-- side bar component -->
+
+            <!-- <div id="head-bar">
+                <img id="openNavi" class="menu" src="${data.url}/assets/img/menu.svg" alt="" srcset="">
+                <div class="title">심심한 개발자의 취미생활</div>
+                <img class="img" src="${data.url}/assets/img/${utils.info.profile}" alt="" srcset="">
+            </div> -->
+            <div id="sidebar">
+                <!-- <img id="closeNavi" class="close" src="${data.url}/assets/img/close.svg" alt="" srcset="">
+                <div class="profile">
+                    <img class="img" src="${data.url}/assets/img/${utils.info.profile}" alt="" srcset="">
+                    <p>${utils.info.intro || '심심한 개발자의 취미생활'}</p>
+                </div>
+                <hr />
+                <h3 class="home"><a href="${data.url}${data.env === 'dev' ? '/index.html' : ''}">HOME</a></h3>
+                <hr /> -->
+
+                <!-- <h3 class="category" onclick="foldNavi()">카테고리</h3> -->
+                <s_sidebar>
+                    <!-- 프로필 -->
+                    <s_sidebar_element>
+                        <div id="profile">
+                            <a href="https://ballboystudy.tistory.com/"><img class="img" src="[##_image_##]" alt=""
+                                    srcset=""></a>
+                            <p>[##_title_##]</p>
+                            <p>[##_desc_##]</p>
+                        </div>
+                        <hr />
+                    </s_sidebar_element>
+
+
+                    <!-- 검색 -->
+                    <s_sidebar_element>
+                        <div class="search">
+                            <s_search>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                                    width="24px" fill="#FFFFFF">
+                                    <path
+                                        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                                </svg>
+                                <input class="word" id="keyword" autocomplete="off" name="[##_search_name_##]"
+                                    value="[##_search_text_##]"
+                                    onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+
+                            </s_search>
+                        </div>
+                        <hr />
+                    </s_sidebar_element>
+
+
+                    <!-- 카테고리 -->
+                    <s_sidebar_element>
+                        <div class="navi">
+                            <!-- [##_category_##] -->
+                            [##_category_list_##]
+                        </div>
+                        <hr />
+                    </s_sidebar_element>
+
+                    <s_sidebar_element>
+                        <!-- 최근에 올라온 글 -->
+                        <div class="recentPost">
+                            <div class="title">최근에 올라온 글 </div>
+                            <ul>
+                                <s_rctps_rep>
+                                    <li>
+                                        <a class="cate"
+                                            href="[##_rctps_rep_category_link_##]">[##_rctps_rep_category_##]</a>
+                                        <a class="title" href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                    </li>
+                                </s_rctps_rep>
+                            </ul>
+                        </div>
+                    </s_sidebar_element>
+
+                    <s_sidebar_element>
+                        <!-- 최근에 올라온 글 -->
+                        <div class="recentPost">
+                            <div class="title">최근에 올라온 글 </div>
+                            <ul>
+                                <s_rctps_rep>
+                                    <li>
+                                        <a class="cate"
+                                            href="[##_rctps_rep_category_link_##]">[##_rctps_rep_category_##]</a>
+                                        <a class="title" href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                    </li>
+                                </s_rctps_rep>
+                            </ul>
+                        </div>
+                    </s_sidebar_element>
+
+                    <s_sidebar_element>
+                        <div class="copyright">
+                            <img class="img" src="./images/github-mark-white.svg" alt="" srcset="">
+                            <a href="https://github.com/BallboyDev/ballboyDev.github.io" target="_blank">Designed by
+                                ballboyDev</a>
+                        </div>
+                    </s_sidebar_element>
+                </s_sidebar>
+
+
+            </div>
+
+            <!-- contents component -->
+            <div id="contents" class="[##_body_id_##]">
+                <div class="main index">
+                    <div class="temp">홈 화면</div>
+
+                    <!-- 홈 화면 타이틀 -->
+                    <h1>심심한 개발자의 심심한 블로그</h1>
+
+                    <!-- 블로그 소개글 -->
+                    <div>[##_desc_##]</div>
+                    <div>[##_blog_menu_##]</div>
+
+                    <!-- 최근 글 -->
+                    <s_article_rep>
+                        <hr />
+                        <div class="titleWrap">
+                            <h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+                            <div class="category">
+                                <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+                            </div>
+                            <div class="date">[##_article_rep_date_##]</div>
+                        </div>
+
+                        <!-- <s_index_article_rep>
+                            <div>[##_article_rep_summary_##]</div>
+                        </s_index_article_rep> -->
+                    </s_article_rep>
+
+                </div>
+                <div class="main cate">
+                    <div class="temp">카테고리</div>
+                    <hr />
+
+                    1. 카테고리 화면 타이틀 / 카테고리 소개글
+                    2. 카테고리 글 리스트
+
+                </div>
+                <div class="main page">
+                    <div class="temp">컨텐츠</div>
+                    <hr />
+
+                    1. 컨텐츠 타이틀
+                    2. 컨텐츠
+
+                </div>
+            </div>
+        </div>
+    </s_t3>
+</body>
+
+</html>
