@@ -280,6 +280,7 @@ body {
 /********************/
 /***** contents *****/
 /********************/
+
 #contents {
     margin-left: 16rem;
     height: 100%;
@@ -292,7 +293,8 @@ body {
 }
 
 #contents>.main {
-    display: none;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     padding: 2rem 0;
     overflow: scroll;
@@ -305,27 +307,107 @@ body {
     }
 }
 
-#contents>.main>.temp {
-    background-color: skyblue;
+#contents>.main>.title {
+    margin-bottom: 1rem;
 }
 
+#contents .main .desc {
+    padding: 1rem;
+    background-color: #161b22;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+}
 
-#contents.tt-body-index>.index {
+#contents .main .main-page {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+#contents>.main .card {
+    float: left;
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem 0.5rem;
+
+    width: calc(100% / 3);
+    height: 18rem;
+
+    border-bottom: 1px solid gray;
+}
+
+#contents .main .card>.thumbnail {
+    background-color: black;
+    margin-bottom: 0.25rem;
+    width: 100%;
+    /* height: 10rem; */
+    /* padding-top: 66.66%; */
+    aspect-ratio: 3/2;
+}
+
+#contents .main .card>.title {
+    color: rgb(189, 197, 203);
+}
+
+#contents .main .card>.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+#contents .main .card>.info>.cate {
+    padding-right: 0.7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#contents .main .card>.info>.date {
+    white-space: nowrap;
+    color: rgb(189, 197, 203);
+}
+
+#contents .paging {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+#contents .paging>a {
+    margin: 0 0.5rem;
+}
+
+#contents .paging>.numbox {
+    display: flex;
+}
+
+#contents .paging>.numbox>a {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contents .paging>.numbox>a:has(.selected) {
+    background-color: rgb(65, 65, 70);
+    /* background-color: gray; */
+    border-radius: 50%;
+}
+
+/********** 글 화면 **********/
+#contents>.main .content-page {
     display: block;
+    float: left;
 }
 
-#contents.tt-body-page>.page {
-    display: block;
-}
-
-#contents.tt-body-category>.cate {
-    display: block;
-}
-
-#contents.tt-body-search>.cate {
-    display: block;
-}
-
+/* #contents:not(.tt-body-page) .main .page {
+    display: none;
+} */
 
 
 /* 홈화면	tt-body-index
@@ -336,3 +418,96 @@ body {
 검색결과 리스트	tt-body-search
 방명록	tt-body-guestbook
 지역로그	tt-body-location */
+
+#tt-body-index .t-base,
+#tt-body-index .content-page {
+    display: none !important;
+}
+
+#tt-body-search .t-index,
+#tt-body-search pre.desc,
+#tt-body-search .content-page {
+    display: none !important;
+}
+
+#tt-body-category .t-index,
+#tt-body-category pre.desc,
+#tt-body-category .content-page {
+    display: none !important;
+}
+
+#tt-body-page .t-index,
+#tt-body-page pre.desc,
+#tt-body-page .card {
+    display: none !important;
+}
+
+.hljs {
+    color: rgb(236, 244, 251) !important;
+}
+
+#contents .bookmark {
+    top: 3rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    position: fixed;
+    right: 0;
+
+    @media (max-width: 1100px) {
+        display: none;
+    }
+}
+
+#contents .bookmark>.title {
+    display: flex;
+    justify-content: flex-end;
+
+    font-size: 0.8rem;
+
+    margin: 0.8rem 0;
+}
+
+#contents .bookmark>.t1>div>a,
+#contents .bookmark>.t2>div>a {
+    color: white;
+    font-weight: bolder;
+}
+
+#contents .bookmark>.title>div {
+    padding: 0.2rem 0.5rem;
+    border: 0.5px solid #4f4f4f;
+    border-radius: 0.3rem;
+
+    /* background-color: rgba(47, 53, 63, 0.5); */
+
+    background-color: rgb(13, 17, 23);
+
+    height: 1.2rem;
+
+    transform-origin: 0 100% 0;
+    transform: rotateX(90deg);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+
+    cursor: pointer;
+
+    box-shadow: -0.3rem 0.4rem 0.3rem black;
+}
+
+#contents .bookmark>.title>div:hover {
+    background-color: rgb(51, 55, 61);
+}
+
+#contents .bookmark>.title>p {
+    padding: 0.2rem 0rem 0.2rem 0.2rem;
+    height: 1.2rem;
+}
+
+#contents .bookmark:hover>.title>div {
+    transform: rotateX(0deg);
+    opacity: 1
+}
+
+#contents>.main>.temp {
+    background-color: skyblue;
+}

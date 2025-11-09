@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[##_page_title_##]</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
 </head>
 
-<body>
+<body id="[##_body_id_##]">
     <s_t3>
         <div id="wrapper">
             <!-- side bar component -->
@@ -30,11 +36,10 @@
 
                 <!-- <h3 class="category" onclick="foldNavi()">카테고리</h3> -->
                 <s_sidebar>
-                    <!-- 프로필 -->
                     <s_sidebar_element>
+                        <!-- 프로필 -->
                         <div id="profile">
-                            <a href="https://ballboystudy.tistory.com/"><img class="img" src="[##_image_##]" alt=""
-                                    srcset=""></a>
+                            <a href="[##_blog_link_##]"><img class="img" src="[##_image_##]" alt="" srcset=""></a>
                             <p>[##_title_##]</p>
                             <p>[##_desc_##]</p>
                         </div>
@@ -42,8 +47,8 @@
                     </s_sidebar_element>
 
 
-                    <!-- 검색 -->
                     <s_sidebar_element>
+                        <!-- 검색 -->
                         <div class="search">
                             <s_search>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
@@ -60,11 +65,9 @@
                         <hr />
                     </s_sidebar_element>
 
-
-                    <!-- 카테고리 -->
                     <s_sidebar_element>
+                        <!-- 카테고리 -->
                         <div class="navi">
-                            <!-- [##_category_##] -->
                             [##_category_list_##]
                         </div>
                         <hr />
@@ -87,22 +90,7 @@
                     </s_sidebar_element>
 
                     <s_sidebar_element>
-                        <!-- 최근에 올라온 글 -->
-                        <div class="recentPost">
-                            <div class="title">최근에 올라온 글 </div>
-                            <ul>
-                                <s_rctps_rep>
-                                    <li>
-                                        <a class="cate"
-                                            href="[##_rctps_rep_category_link_##]">[##_rctps_rep_category_##]</a>
-                                        <a class="title" href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
-                                    </li>
-                                </s_rctps_rep>
-                            </ul>
-                        </div>
-                    </s_sidebar_element>
-
-                    <s_sidebar_element>
+                        <!-- 저작권 -->
                         <div class="copyright">
                             <img class="img" src="./images/github-mark-white.svg" alt="" srcset="">
                             <a href="https://github.com/BallboyDev/ballboyDev.github.io" target="_blank">Designed by
@@ -115,48 +103,100 @@
             </div>
 
             <!-- contents component -->
-            <div id="contents" class="[##_body_id_##]">
-                <div class="main index">
-                    <div class="temp">홈 화면</div>
+            <div id="contents">
+
+                <div class="main">
+                    <!-- <div class="temp">홈 화면</div> -->
 
                     <!-- 홈 화면 타이틀 -->
-                    <h1>심심한 개발자의 심심한 블로그</h1>
-
-                    <!-- 블로그 소개글 -->
-                    <div>[##_desc_##]</div>
-                    <div>[##_blog_menu_##]</div>
+                    <h1 class="title t-index">심심한 개발자의 심심한 블로그</h1>
+                    <h1 class="title t-base">[##_page_title_##]</h1>
+                    <pre
+                        class="desc">안녕하세요 :)<br />심심한 개발자가 좋아하는 것들, 관심 있는 주제들, 그리고 일상 속에서 느낀 생각들을 자유롭게 기록하는 공간 입니다.<br />특별할게 없는 평범한 일상 생활들이 모여 있어요<br /><br />🍀 가볍게 구경하고 댓글 남겨주시면 하나하나 소중하게 여기며<br/>의견을 나눌수 있는 공간이 되었으면 좋겠습니다. 🍀</pre>
+                    <hr />
 
                     <!-- 최근 글 -->
-                    <s_article_rep>
-                        <hr />
-                        <div class="titleWrap">
-                            <h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
-                            <div class="category">
-                                <a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
-                            </div>
-                            <div class="date">[##_article_rep_date_##]</div>
+                    <div class="main-page">
+                        <s_article_rep>
+                            <s_index_article_rep>
+                                <a class="card" href="[##_article_rep_link_##]">
+                                    <img class="thumbnail" src="[##_article_rep_thumbnail_url_##]"
+                                        onerror="this.src='https\:\/\/placehold.co/500x300?text=prepareing+image...'">
+                                    <div class="info">
+                                        <div class="cate">[##_article_rep_category_##]</div>
+                                        <small class="date">[##_article_rep_simple_date_##]</small>
+                                    </div>
+                                    <h4 class="title">[##_article_rep_title_##]</h4>
+                                </a>
+                            </s_index_article_rep>
+
+                            <s_permalink_article_rep>
+
+                                <div class="content-page markdown-body">
+
+                                    [##_article_rep_desc_##]
+                                </div>
+                                <!--                                 
+
+                                <s_article_related>
+                                    <div class="rounded-md p-5 mt-4 mb-2 box-border bg-h-200 text-h-500 dark:bg-h-700 dark:text-h-200"
+                                        id="related">
+                                        <div
+                                            class="tit font-bold flex items-center justify-between text-overflow-hidden text-sm pb-2 mb-4 border-b border-solid border-h-300 dark:border-h-600">
+                                            <span class="txt">'[##_article_rep_category_##]' 카테고리의 다른 글</span><i
+                                                class="ico fas fa-bars"></i>
+                                        </div>
+                                        <ul class="posts flex flex-col gap-y-2">
+                                            <s_article_related_rep>
+                                                <li class="post"><a
+                                                        class="tit flex items-center justify-between text-sm"
+                                                        href="[##_article_related_rep_link_##]">
+                                                        <div class="txt text-overflow-hidden">
+                                                            [##_article_related_rep_title_##]</div><i
+                                                            class="ico fas fa-arrow-right scale-75"></i>
+                                                    </a></li>
+                                            </s_article_related_rep>
+                                        </ul>
+                                    </div>
+                                </s_article_related> -->
+                            </s_permalink_article_rep>
+                            <!-- <s_page_rep>
+                                [##_article_rep_desc_##]
+                            </s_page_rep> -->
+
+                            <!-- <s_ad_div>
+                                <div class="admin">
+                                    <a href="[##_s_ad_m_link_##]">수정</a> :
+                                    <a href="#" onclick="[##_s_ad_m_onclick_##]">수정(창으로)</a> |
+                                    ([##_s_ad_s1_label_##])→<a href="#"
+                                        onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a> |
+                                    <a href="#" onclick="[##_s_ad_t_onclick_##]">관련글(트랙백)</a> |
+                                    <a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+                                </div>
+                            </s_ad_div> -->
+                        </s_article_rep>
+
+
+                    </div>
+
+                    <s_paging>
+                        <div class="paging">
+                            <a [##_prev_page_##] class="[##_no_more_prev_##]"><svg xmlns="http://www.w3.org/2000/svg"
+                                    height="1.5rem" width="1.5rem" viewBox="0 -960 960 960" fill="#FFFFFF">
+                                    <path d="M640-80 240-480l400-400 71 71-329 329 329 329-71 71Z" />
+                                </svg></a>
+
+                            <span class="numbox">
+                                <s_paging_rep>
+                                    <a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+                                </s_paging_rep>
+                            </span>
+                            <a [##_next_page_##] class="[##_no_more_next_##]"><svg xmlns="http://www.w3.org/2000/svg"
+                                    height="1.5rem" width="1.5rem" viewBox="0 -960 960 960" fill="#FFFFFF">
+                                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                                </svg></a>
                         </div>
-
-                        <!-- <s_index_article_rep>
-                            <div>[##_article_rep_summary_##]</div>
-                        </s_index_article_rep> -->
-                    </s_article_rep>
-
-                </div>
-                <div class="main cate">
-                    <div class="temp">카테고리</div>
-                    <hr />
-
-                    1. 카테고리 화면 타이틀 / 카테고리 소개글
-                    2. 카테고리 글 리스트
-
-                </div>
-                <div class="main page">
-                    <div class="temp">컨텐츠</div>
-                    <hr />
-
-                    1. 컨텐츠 타이틀
-                    2. 컨텐츠
+                    </s_paging>
 
                 </div>
             </div>
