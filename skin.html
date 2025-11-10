@@ -120,8 +120,10 @@
                         <s_article_rep>
                             <s_index_article_rep>
                                 <a class="card" href="[##_article_rep_link_##]">
-                                    <img class="thumbnail" src="[##_article_rep_thumbnail_url_##]"
-                                        onerror="this.src='https\:\/\/placehold.co/500x300?text=prepareing+image...'">
+                                    <div class="thumbnailBox">
+                                        <img class="thumbnail" src="[##_article_rep_thumbnail_url_##]"
+                                            onerror="this.src='https\:\/\/placehold.co/500x300?text=prepareing+image...'">
+                                    </div>
                                     <div class="info">
                                         <div class="cate">[##_article_rep_category_##]</div>
                                         <small class="date">[##_article_rep_simple_date_##]</small>
@@ -132,10 +134,8 @@
 
                             <s_permalink_article_rep>
 
-                                <div class="content-page markdown-body">
+                                [##_article_rep_desc_##]
 
-                                    [##_article_rep_desc_##]
-                                </div>
                                 <!--                                 
 
                                 <s_article_related>
